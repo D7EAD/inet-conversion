@@ -61,13 +61,12 @@
 				signed   : 2315449416 >> 24 -> 11111111 11111111 11111111 10001010
 				Think of right shifting an unsigned value as Java's >>> operator. :)
 */
+#include <stdio.h>
+#include <stdlib.h>
 
-#include <iostream>
-#include <vector>
-
-void v4ToInt(std::vector<unsigned int> octets) {
+void v4ToInt(const char* octets[4]) {
 	printf("%u\n",
-		(octets[0] << 24) + (octets[1] << 16) + (octets[2] << 8) + (octets[3] << 0)
+		(atoi(octets[0]) << 24) + (atoi(octets[1]) << 16) + (atoi(octets[2]) << 8) + (atoi(octets[3]) << 0)
 	);
 }
 
